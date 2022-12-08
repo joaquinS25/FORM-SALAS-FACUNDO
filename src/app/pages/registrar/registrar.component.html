@@ -1,63 +1,77 @@
-
 <main>
-    <div class="container">
+    
+    <div class="container p-5">
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title mb-3">Formulario Registrar</h5>
-                <div class="row">
-                    <div class="col-4 ">
-                        <form [formGroup]="registrarForm" class="row g-3 formulario" (ngSubmit)="submit()">
-                            <label class="form-label" for="firstName">Nombre</label>
-                            <input [formControl]="firstNameControl" type="text" class="form-control"
-                                [ngClass]="registrarForm.get('firstName')?.errors && registrarForm.get('firstName')?.dirty ? 'error' : ''">
-                            <br>
-                            <small class="text-danger"
-                                *ngIf="registrarForm.get('firstName')?.errors?.['required'] && registrarForm.get('firstName')?.dirty">El
-                                nombre es obligatorio</small>
-                            <small class="text-danger"
-                                *ngIf="registrarForm.get('firstName')?.errors?.['minlength'] && registrarForm.get('firstName')?.dirty">El
-                                nombre debe de tener minimo 3 caracteres</small>
+                <h5 class="card-title mb-6">Formulario Registrar</h5>
 
-                            <br>
-                            <label for="" class="formulario__label">Apellido</label>
-                            <input [formControl]="lastNameControl" type="text" class="form-control"
-                                [ngClass]="registrarForm.get('lastName')?.errors && registrarForm.get('lastName')?.dirty ? 'error' : ''">
-                            <br>
-                            <small class="text-danger"
-                                *ngIf="registrarForm.get('lastName')?.errors?.['required'] && registrarForm.get('lastName')?.dirty">El
-                                apellido es obligatorio</small>
-                            <small class="text-danger"
-                                *ngIf="registrarForm.get('lastName')?.errors?.['minlength'] && registrarForm.get('lastName')?.dirty">El
-                                apellido debe de tener minimo 3 caracteres</small>
+                <form [formGroup]="registrarForm" class="row g-3 formulario" (ngSubmit)="submit()">
+                    <div class="col-6">
+                        <label class="form-label" for="firstName">Nombre</label>
+                        <input [formControl]="firstNameControl" type="text" class="form-control"
+                            [ngClass]="registrarForm.get('firstName')?.errors && registrarForm.get('firstName')?.dirty ? 'error' : ''">
+                        
+                        <small class="text-danger"
+                            *ngIf="registrarForm.get('firstName')?.errors?.['required'] && registrarForm.get('firstName')?.dirty">El
+                            nombre es obligatorio</small>
+                        <small class="text-danger"
+                            *ngIf="registrarForm.get('firstName')?.errors?.['minlength'] && registrarForm.get('firstName')?.dirty">El
+                            nombre debe de tener minimo 3 caracteres</small>
 
-                            <br>
-                            <label for="" class="formulario__label">Email</label>
-                            <input [formControl]="emailControl" type="text" class="form-control"
-                                [ngClass]="registrarForm.get('email')?.errors && registrarForm.get('email')?.dirty ? 'error' : ''">
-                            <small class="text-danger"
-                                *ngIf="registrarForm.get('email')?.errors?.['email'] && registrarForm.get('email')?.dirty">El
-                                correo no es valido</small>
-                            <small class="text-danger"
-                                *ngIf="registrarForm.get('email')?.errors?.['required'] && registrarForm.get('email')?.dirty">El
-                                correo es obligatorio</small>
-                            <label for="" class="formulario__label">Contraseña</label>
-                            <input [formControl]="contraseniaControl" type="password" class="form-control"
-                                [ngClass]="registrarForm.get('contraseña')?.errors && registrarForm.get('contraseña')?.dirty ? 'error' : ''">
-                            <small class="text-danger"
-                                *ngIf="registrarForm.get('contraseña')?.errors?.['required'] && registrarForm.get('contraseña')?.dirty">La
-                                contraseña es obligatoria</small>
-                            <label for="" class="formulario__label">Repita contraseña</label>
-                            <input [formControl]="repetirContraseniaControl" type="password" class="form-control"
-                                [ngClass]="registrarForm.get('repetirContraseña')?.errors && registrarForm.get('repetirContraseña')?.dirty ? 'error' : ''">
-                            <small class="text-danger"
-                                *ngIf="registrarForm.get('repetirContraseña')?.errors?.['required'] && registrarForm.get('repetirContraseña')?.dirty">La
-                                contraseña es obligatoria</small>
-                            <button [disabled]="!registrarForm.valid" class="formulario__submit btn btn-success"
-                                type="submit" id="boton1">Registrar</button>
-                            <br>
-                        </form>
+
                     </div>
-                </div>
+                    <div class="col-6">
+                        <label for="" class="formulario__label">Apellido</label>
+                        <input [formControl]="lastNameControl" type="text" class="form-control"
+                            [ngClass]="registrarForm.get('lastName')?.errors && registrarForm.get('lastName')?.dirty ? 'error' : ''">
+
+                        <small class="text-danger"
+                            *ngIf="registrarForm.get('lastName')?.errors?.['required'] && registrarForm.get('lastName')?.dirty">El
+                            apellido es obligatorio</small>
+                        <small class="text-danger"
+                            *ngIf="registrarForm.get('lastName')?.errors?.['minlength'] && registrarForm.get('lastName')?.dirty">El
+                            apellido debe de tener minimo 3 caracteres</small>
+
+                    </div>
+                    <div class="col-6">
+                        <label for="" class="formulario__label">Email</label>
+                        <input [formControl]="emailControl" type="text" class="form-control"
+                            [ngClass]="registrarForm.get('email')?.errors && registrarForm.get('email')?.dirty ? 'error' : ''">
+                        <small class="text-danger"
+                            *ngIf="registrarForm.get('email')?.errors?.['email'] && registrarForm.get('email')?.dirty">El
+                            correo no es valido</small>
+                        <small class="text-danger"
+                            *ngIf="registrarForm.get('email')?.errors?.['required'] && registrarForm.get('email')?.dirty">El
+                            correo es obligatorio</small>
+                    </div>
+                    <div class="col-6">
+                        <label for="" class="formulario__label">Contraseña</label>
+                        <input [formControl]="contraseniaControl" type="password" class="form-control"
+                            [ngClass]="registrarForm.get('contraseña')?.errors && registrarForm.get('contraseña')?.dirty ? 'error' : ''">
+                        <small class="text-danger"
+                            *ngIf="registrarForm.get('contraseña')?.errors?.['required'] && registrarForm.get('contraseña')?.dirty">La
+                            contraseña es obligatoria</small>
+                        <small class="text-danger"
+                            *ngIf="registrarForm.get('contraseña')?.errors?.['minlength'] && registrarForm.get('contraseña')?.dirty">La
+                            contraseña debe de tener minimo 6 caracteres</small>
+                    </div>
+                    <div class="col-6">
+                        <label for="" class="formulario__label">Repita contraseña</label>
+                        <input [formControl]="repetirContraseniaControl" type="password" class="form-control"
+                            [ngClass]="registrarForm.get('repetirContraseña')?.errors && registrarForm.get('repetirContraseña')?.dirty ? 'error' : ''">
+                        <small class="text-danger"
+                            *ngIf="registrarForm.get('repetirContraseña')?.errors?.['required'] && registrarForm.get('repetirContraseña')?.dirty">La
+                            contraseña es obligatoria</small>
+                        <small class="text-danger"
+                            *ngIf="registrarForm.get('repetirContraseña')?.errors?.['minlength'] && registrarForm.get('repetirContraseña')?.dirty">La
+                            contraseña debe de tener minimo 6 caracteres</small>
+
+                       
+                    </div>
+                    <button [disabled]="!registrarForm.valid" class="formulario__submit btn btn-success" type="submit"
+                        id="boton1">Registrar</button>
+                </form>
+
 
             </div>
         </div>
