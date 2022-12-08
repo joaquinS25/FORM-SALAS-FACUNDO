@@ -3,3 +3,9 @@ main {
     background: rgb(0,66,130);
     background: linear-gradient(180deg, rgba(0,66,130,1) 0%, rgba(0,212,255,1) 100%);
 }
+.error {
+    background-color: red;
+}
+.exito {
+    background-color: green;
+}
